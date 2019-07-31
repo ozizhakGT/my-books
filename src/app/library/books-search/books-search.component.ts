@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {LibraryService} from '../library.service';
 
 @Component({
   selector: 'app-books-search',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BooksSearchComponent implements OnInit {
 
-  constructor() { }
+  constructor(private libraryService: LibraryService) { }
 
   ngOnInit() {
+    this.libraryService.booksSubject.subscribe(books => {
+      console.log(books);
+    })
   }
 
 }
