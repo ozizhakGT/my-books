@@ -14,7 +14,7 @@ export class LoginComponent {
   onLogin(form) {
     const username = form.value['username'];
     if (username) {
-      this.authService.login(true);
+      this.authService.login(true, username);
       this.router.navigate(['library']);
     }
   }
