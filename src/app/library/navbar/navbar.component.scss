@@ -1,6 +1,7 @@
 .navbar {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   background-color: var(--secondery-color);
 
   position: relative;
@@ -24,11 +25,6 @@
     color: darkgrey;
   }
   &__search {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
     &--input {
       border: 0;
       border-radius: 15px;
@@ -43,5 +39,10 @@
       transform: translateY(7px);
       box-shadow: 0 .5rem 2rem rgba(255,255,255, .3);
     }
+  }
+  &__logout {
+    transform: translateX(-2rem);
+    color: white;
+    border: white 1px solid;
   }
 }

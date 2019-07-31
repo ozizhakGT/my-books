@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -6,7 +7,7 @@ import { Injectable } from '@angular/core';
 export class AuthService {
   isValidUser = false;
   username: string;
-  constructor() { }
+  constructor(private router: Router) { }
 
   getUserName() {
     return this.username;
@@ -21,5 +22,10 @@ export class AuthService {
   login(valid=false, username) {
       this.username = username;
       this.isValidUser = valid;
+      this.router.navigate(['library']);
+  }
+  logout() {
+    this.isValidUser = false;
+    this.router.navigate(['login']);
   }
 }

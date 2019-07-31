@@ -3,6 +3,7 @@ import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/fromEvent';
 import 'rxjs/add/operator/debounceTime';
 import {LibraryService} from '../library.service';
+import {AuthService} from '../../login/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -11,7 +12,7 @@ import {LibraryService} from '../library.service';
 })
 export class NavbarComponent implements OnInit {
   @ViewChild('bookQuery', {static: true}) bookQuery: ElementRef;
-  constructor(private libraryService: LibraryService) { }
+  constructor(private libraryService: LibraryService, private authService: AuthService) { }
 
   ngOnInit() {
     Observable.fromEvent(this.bookQuery.nativeElement, 'keyup')
@@ -24,6 +25,10 @@ export class NavbarComponent implements OnInit {
             //  TODO: NOTIFICATION MESSEGE
             }
           });
+  }
+
+  onLogout() {
+    this.authService.logout();
   }
 
 

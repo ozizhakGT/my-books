@@ -9,13 +9,12 @@ import {Router} from '@angular/router';
 })
 export class LoginComponent {
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService) { }
 
   onLogin(form) {
     const username = form.value['username'];
     if (username) {
       this.authService.login(true, username);
-      this.router.navigate(['library']);
     }
   }
 
