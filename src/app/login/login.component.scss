@@ -1,0 +1,49 @@
+.login {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  &__background {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    background-image: url(../../assets/login.jpg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    animation: blurBg 1s forwards;
+  }
+  &__authentication {
+    opacity: 0;
+    font-family: cursive;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem 10rem;
+    h1 {
+      font-size: 4rem;
+    }
+    animation: fadeIn .7s .4s forwards;
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.8rem;
+
+    button {
+      align-self: center;
+    }
+  }
+}
+mat-card-header {
+  display: block;
+  margin: 2rem 0;
+}
+
+@keyframes blurBg {
+  0% {filter: blur(0);}
+  100% {filter: blur(3px);}
+}
