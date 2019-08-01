@@ -1,6 +1,8 @@
 .books {
   display: flex;
   justify-content: center;
+
+  height: 70vh;
   &__greeting {
     text-align: center;
     line-height: 3.5rem;
@@ -15,6 +17,12 @@
     img {
       animation: moveLeftRight 7s 1s infinite;
     }
+  }
+
+  &__results {
+
+    opacity: 0;
+    animation: fadeIn .8s  forwards;
   }
 }
 
