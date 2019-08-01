@@ -20,14 +20,14 @@ export class BooksSearchComponent implements OnInit {
     this.username = this.route.snapshot.data['username'] || 'Anonymous';
     this.libraryService.booksSubject.subscribe(books => {
       this.books = books;
-      console.log(this.books)
+      console.log(this.books);
     });
   }
 
-  openBookModal(): void {
+  openBookModal(book): void {
     const dialogRef = this.dialog.open(BookDetailsModal, {
-      width: '500px',
-
+      width: '55rem',
+      data: book
     })
   }
 }
@@ -35,6 +35,7 @@ export class BooksSearchComponent implements OnInit {
 // MODAL COMPONENT
 @Component({
   selector: 'book-details-modal',
+  styleUrls: ['./books-search.component.scss'],
   templateUrl: 'book-details-modal.html'
 })
 export class BookDetailsModal {
@@ -42,5 +43,8 @@ export class BookDetailsModal {
 
   onClose(): void {
     this.dialog.close();
+  }
+  detectNumbersOfAuthors(authors) {
+    console.log(authors)
   }
 }

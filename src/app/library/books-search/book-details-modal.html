@@ -1,1 +1,25 @@
-<h1>TEST</h1>
+<div class="modal">
+  <header class="modal__header">
+    <h2 class="modal__header--title">{{book.title}}</h2>
+    <img class="modal__header--image" src="{{book.imageLinks.thumbnail}}" alt="book pic">
+  </header>
+  <div class="modal__body">
+    <p class="row"><b>{{book.authors.length === 1 ? 'Author' : 'Authors'}}</b>: <span
+      *ngIf="book.authors.length === 1; else showAllAuthors">{{book.authors[0]}}</span>
+      <ng-template #showAllAuthors>
+        <!--<span *ngFor="let author of book.authors; let i = index">{{author}} <span *ngIf="book.authors.length-1 !== i">, </span></span>-->
+        <span
+          *ngFor="let author of book.authors; let i = index">{{author}}{{book.authors.length - 1 !== i ? ', ' : ''}}</span>
+      </ng-template>
+    </p>
+    <mat-divider></mat-divider>
+    <p class="row"><b>Publisher:</b> {{book.publisher}}</p>
+    <mat-divider></mat-divider>
+    <p class="row"><b>Released:</b> {{book.publishedDate}}</p>
+    <mat-divider></mat-divider>
+    <div class="row modal__body--desc">
+      <p><b>Description</b></p>
+      <p>{{book.description}}</p>
+    </div>
+  </div>
+</div>

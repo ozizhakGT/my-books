@@ -7,7 +7,9 @@
   <section class="books__results" *ngIf="books.length > 0">
     <pagination-controls (pageChange)="p = $event"></pagination-controls>
     <div class="books__results--wrapper">
-      <app-book *ngFor="let book of books | paginate: { itemsPerPage: 20, currentPage: p }" [book]="book"></app-book>
+      <app-book *ngFor="let book of books | paginate: {itemsPerPage: 20, currentPage: p}"
+        [book]="book"
+        (click)="openBookModal(book)"></app-book>
     </div>
   </section>
 </main>
