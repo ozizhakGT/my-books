@@ -19,7 +19,7 @@ export class WishlistComponent implements OnInit, OnDestroy {
     * else give book id and push it to wishlist Array.
     * */
     this.bookSubscription = this.libraryService.bookSubject.subscribe(book => {
-      this.libraryService.notificationMessage(`${book.title} ${book['isChosen'] ? 'Added' : 'Removed'} successfully`, 'success');
+      this.libraryService.notificationMessage(`${book['title']} ${book['isChosen'] ? 'Added' : 'Removed'} successfully`, 'success');
       if (!book['isChosen']) {
         return this.onDelete(book);
       }
