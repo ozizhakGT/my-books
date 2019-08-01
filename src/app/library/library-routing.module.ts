@@ -4,8 +4,7 @@ import {LibraryComponent} from './library.component';
 
 const libraryRoutes: Routes = [
   {path: '', children: [
-      {path: '', component: LibraryComponent},
-      {path: ':book', component: LibraryComponent},
+      {path: '', component: LibraryComponent}
     ]}
 ];
 

@@ -1,0 +1,54 @@
+.wishlist {
+  &__title {
+    margin: 2rem;
+    text-align: center;
+    font-size: 1.7rem;
+    color: white;
+    font-family: var(--title-font);
+    
+    span {
+      color: var(--heart-color);
+    }
+  }
+
+  &__book {
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+    transform: translateX(150px);
+    padding: 1rem;
+    animation: appearFromRight .6s .3s forwards;
+
+    & > *:not(:last-child) {
+      margin-right: 4rem;
+    }
+    &--remove {
+      cursor: pointer;
+      color: white;
+      font-size: 17px;
+      background: #ff8888;
+      padding: .5rem;
+      height: 25px;
+      width: 25px;
+      align-self: center;
+      text-align: center;
+      border-radius: 40px;
+      transform: scale(.7);
+    }
+    &--image {
+      width: 6rem;
+      height: 5rem;
+      border-radius: 10px;
+    }
+
+    &:nth-child(odd) {
+      background: darkgrey;
+    }
+  }
+}
+
+@keyframes appearFromRight {
+  0% {transform: translateX(150px); opacity: 0}
+  100% {transform: translateX(0); opacity: 1}
+}

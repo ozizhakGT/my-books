@@ -42,6 +42,17 @@
 }
 // MODAL DESIGN
 .modal {
+  display: flex;
+  flex-direction: column;
+
+  &__wishlist {
+    align-self: flex-end;
+    color: lightgrey;
+    font-style: unset;
+    font-size: 3rem;
+    cursor: pointer;
+    transition: .3s color;
+  }
   font-size: 1.7rem;
   &__header {
     display: flex;
@@ -69,6 +80,9 @@
       }
     }
   }
+}
+.chosen {
+  color: var(--heart-color);
 }
 
 

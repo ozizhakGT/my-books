@@ -1,4 +1,5 @@
 <div class="modal">
+  <i class="modal__wishlist"[ngClass]="{'chosen': book.isChosen}" (click)="onToggle(book, $event)">&#10084;</i>
   <header class="modal__header">
     <h2 class="modal__header--title">{{book.title}}</h2>
     <img class="modal__header--image" src="{{book.imageLinks.thumbnail}}" alt="book pic">
@@ -13,9 +14,9 @@
       </ng-template>
     </p>
     <mat-divider></mat-divider>
-    <p class="row"><b>Publisher:</b> {{book.publisher}}</p>
+    <p class="row"><b>Publisher:</b> {{book.publisher || 'None'}}</p>
     <mat-divider></mat-divider>
-    <p class="row"><b>Released:</b> {{book.publishedDate}}</p>
+    <p class="row"><b>Released:</b> {{book.publishedDate || 'None'}}</p>
     <mat-divider></mat-divider>
     <div class="row modal__body--desc">
       <p><b>Description</b></p>

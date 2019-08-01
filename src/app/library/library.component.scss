@@ -1,9 +1,14 @@
 .library {
+  opacity: 0;
   display: flex;
+  animation: appearing 1s 1s forwards;
 
   *:first-child {
-    flex-grow: .8;
+    flex-grow: 1;
     display: flex;
     justify-content: center;
+  }
+  *:last-child {
+    background-image: linear-gradient(to bottom, var(--third-color), var(--primary-color));
   }
 }

@@ -6,6 +6,7 @@
   --primary-color: #e1eef6;
   --secondery-color: #7f9eb2;
   --third-color: #9baec8;
+  --heart-color: #ff83c1;
 
   --title-font: cursive;
 }
@@ -47,12 +48,26 @@ html {
   background-image: -webkit-gradient(linear,
     left bottom,
     left top,
-    color-stop(0.44, rgb(122,153,217)),
-    color-stop(0.72, rgb(73,125,189)),
-    color-stop(0.86, rgb(28,58,148)));
+    color-stop(0.44, #929dbd),
+    color-stop(0.72, #b9c8dc),
+    color-stop(0.86, #d2ddff));
+}
+.mat-simple-snackbar {
+  font-size: 1.6rem;
+}
+.success {
+  background: green;
+}
+
+.failed {
+  background: red;
 }
 // GLOBAL ANIMATION
 @keyframes fadeIn {
   0% {opacity: 0; transform: translateY(-100px)}
   100% {opacity: 1; transform: translateY(-60px)}
+}
+@keyframes appearing {
+  0% {opacity: 0}
+  100% {opacity: 1}
 }

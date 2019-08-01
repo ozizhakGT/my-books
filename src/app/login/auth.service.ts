@@ -9,6 +9,7 @@ export class AuthService {
   username: string;
   constructor(private router: Router) { }
 
+  // return current username
   getUserName() {
     return this.username;
   }
@@ -24,6 +25,10 @@ export class AuthService {
       this.isValidUser = valid;
       this.router.navigate(['library']);
   }
+  /*
+  * change isValidUser to true and navidate to login route.
+  * after that guard will protect user validation
+  * */
   logout() {
     this.isValidUser = false;
     this.router.navigate(['login']);
