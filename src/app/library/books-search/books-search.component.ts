@@ -9,13 +9,14 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class BooksSearchComponent implements OnInit {
   username: string;
+  books: any[] = [];
   constructor(private libraryService: LibraryService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.username = this.route.snapshot.data['username'] || 'Anonymous';
     this.libraryService.booksSubject.subscribe(books => {
-      console.log(books);
-    })
+      this.books = books;
+    });
   }
 
 }

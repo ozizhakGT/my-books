@@ -6,6 +6,7 @@ import {NavbarComponent} from './navbar/navbar.component';
 import {BooksSearchComponent} from './books-search/books-search.component';
 import {WishlistComponent} from './wishlist/wishlist.component';
 import {SharedModule} from '../shared/shared.module';
+import { BookComponent } from './books-search/book/book.component';
 
 
 
@@ -14,7 +15,8 @@ import {SharedModule} from '../shared/shared.module';
     LibraryComponent,
     NavbarComponent,
     BooksSearchComponent,
-    WishlistComponent
+    WishlistComponent,
+    BookComponent
   ],
   imports: [
     CommonModule,

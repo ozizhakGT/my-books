@@ -1,0 +1,28 @@
+.books {
+  display: flex;
+  justify-content: center;
+  &__greeting {
+    text-align: center;
+    line-height: 3.5rem;
+    margin-top: 16rem;
+    font-family: var(--title-font);
+    &--main {
+      font-size: 3rem;
+    }
+    &--sub {
+      font-size: 2rem;
+    }
+    img {
+      animation: moveLeftRight 7s 1s infinite;
+    }
+  }
+}
+
+
+@keyframes moveLeftRight {
+  0% {transform: translateX(0)}
+  15% {transform: translateX(10px)}
+  30% {transform: translateX(-8px)}
+  50% {transform: translateX(0)}
+  100% {transform: translateX(0)}
+}
