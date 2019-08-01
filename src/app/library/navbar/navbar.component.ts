@@ -12,15 +12,19 @@ import {AuthService} from '../../login/auth.service';
 })
 export class NavbarComponent implements OnInit {
   @ViewChild('bookQuery', {static: true}) bookQuery: ElementRef;
+  isLoading = false;
   constructor(private libraryService: LibraryService, private authService: AuthService) { }
 
   ngOnInit() {
     Observable.fromEvent(this.bookQuery.nativeElement, 'keyup')
-          .debounceTime(1800)
+          .debounceTime(1000)
           .subscribe(() => {
             const query = this.bookQuery.nativeElement.value;
             if (query.length >= 3) {
-              this.libraryService.getBooks(query,10)
+              this.isLoading = true;
+              this.libraryService.getBooks(query).then(res => {
+                this.isLoading = false;
+              });
             } else {
             //  TODO: NOTIFICATION MESSEGE
             }

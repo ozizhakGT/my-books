@@ -1,0 +1,14 @@
+.book {
+  background: none;
+  &__image {
+    width: 100%;
+    height: 18rem;
+    cursor: pointer;
+    transition: .4s all;
+
+    &:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 1.5rem rgba(0,0,0, .5);
+    }
+  }
+}

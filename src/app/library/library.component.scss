@@ -3,5 +3,7 @@
 
   *:first-child {
     flex-grow: .8;
+    display: flex;
+    justify-content: center;
   }
 }

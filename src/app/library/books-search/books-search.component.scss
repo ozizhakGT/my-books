@@ -3,6 +3,7 @@
   justify-content: center;
 
   height: 70vh;
+  width: 60vw;
   &__greeting {
     text-align: center;
     line-height: 3.5rem;
@@ -20,9 +21,22 @@
   }
 
   &__results {
-
+    width: 100%;
     opacity: 0;
+    margin: 16rem auto;
+    text-align: center;
     animation: fadeIn .8s  forwards;
+
+    &--wrapper {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-around;
+      flex-wrap: wrap;
+
+      & > * {
+        margin: 2rem;
+      }
+    }
   }
 }
 

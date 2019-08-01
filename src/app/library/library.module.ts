@@ -7,6 +7,7 @@ import {BooksSearchComponent} from './books-search/books-search.component';
 import {WishlistComponent} from './wishlist/wishlist.component';
 import {SharedModule} from '../shared/shared.module';
 import { BookComponent } from './books-search/book/book.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 
 
@@ -21,7 +22,8 @@ import { BookComponent } from './books-search/book/book.component';
   imports: [
     CommonModule,
     LibraryRoutingModule,
-    SharedModule
+    SharedModule,
+    NgxPaginationModule
   ]
 })
 export class LibraryModule { }

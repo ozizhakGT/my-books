@@ -5,6 +5,7 @@
   </div>
   <div class="navbar__search">
       <input #bookQuery class="navbar__search--input" type="text" placeholder="Search For Book">
+      <img *ngIf="isLoading" class="navbar__search--spinner" src="../../../assets/navbar-loading.gif" alt="Loading">
   </div>
   <button class="navbar__logout" mat-stroked-button (click)="onLogout()">Logout</button>
 </nav>

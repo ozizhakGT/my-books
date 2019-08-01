@@ -4,7 +4,7 @@ import {AuthService} from './login/auth.service';
 
 
 @Injectable()
-export class UserResolver implements Resolve {
+export class UserResolver implements Resolve<string> {
   constructor(private authService: AuthService) {}
   resolve() {
     return this.authService.getUserName();

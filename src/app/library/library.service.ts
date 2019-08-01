@@ -11,10 +11,11 @@ export class LibraryService {
   baseUrl = 'https://www.googleapis.com/books/v1/volumes';
   constructor(private http: HttpClient) { }
 
-  getBooks(query, start=0, end=10) {
+  getBooks(query, start=0, end=40) {
     return this.http.get(`${this.baseUrl}?q=${query}&startIndex=${start}&maxResults=${end}`).toPromise().then(res => {
       this.books = res['items'].map(book => book['volumeInfo']);
       this.booksSubject.next(this.books);
+      return true;
     });
   }
 }
