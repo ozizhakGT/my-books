@@ -8,7 +8,7 @@
     <pagination-controls (pageChange)="p = $event"></pagination-controls>
     <div class="books__results--wrapper">
       <app-book *ngFor="let book of books | paginate: {itemsPerPage: 20, currentPage: p}"
-        [book]="book" matTooltip="{{book.subtitle}}"
+        [book]="book" matTooltip="{{book.title}}"
         (click)="openBookModal(book)"></app-book>
     </div>
   </section>
