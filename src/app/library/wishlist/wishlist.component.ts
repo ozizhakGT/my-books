@@ -36,8 +36,6 @@ export class WishlistComponent implements OnInit, OnDestroy {
   * Delete from Wishlist Array
   * */
   onDelete(book) {
-    if (confirm(`Are you sure you want to remove ${book.title} from your wishlist?`)) {
       this.wishlist.splice(book['id'] - 1, 1);
-    }
   }
 }
