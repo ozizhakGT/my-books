@@ -1,6 +1,6 @@
 <main class="books">
   <section class="books__greeting" *ngIf="books.length === 0">
-    <h1 class="books__greeting--main">Greeting {{username}}</h1>
+    <h1 class="books__greeting--main">Greetings {{username}}</h1>
     <h2 class="books__greeting--sub">What book are you looking for?</h2>
     <img src="../../../assets/books.png" alt="book icon">
   </section>
@@ -8,7 +8,7 @@
     <pagination-controls (pageChange)="p = $event"></pagination-controls>
     <div class="books__results--wrapper">
       <app-book *ngFor="let book of books | paginate: {itemsPerPage: 20, currentPage: p}"
-        [book]="book"
+        [book]="book" matTooltip="{{book.subtitle}}"
         (click)="openBookModal(book)"></app-book>
     </div>
   </section>

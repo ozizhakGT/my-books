@@ -1,11 +1,11 @@
 <div class="modal">
-  <i class="modal__wishlist"[ngClass]="{'chosen': book.isChosen}" (click)="onToggle(book, $event)">&#10084;</i>
+  <i matTooltip="{{book.isChosen ? 'Remove from' : 'Add to'}} Wislist" class="modal__wishlist"[ngClass]="{'chosen': book.isChosen}" (click)="onToggle(book, $event)">&#10084;</i>
   <header class="modal__header">
     <h2 class="modal__header--title">{{book.title}}</h2>
     <img class="modal__header--image" src="{{book.imageLinks.thumbnail}}" alt="book pic">
   </header>
   <div class="modal__body">
-    <p class="row"><b>{{book.authors.length === 1 ? 'Author' : 'Authors'}}</b>: <span
+    <p class="row" *ngIf="book.authors"><b>{{(book.authors.length > 1) ? 'Authors' : 'Author'}}</b>: <span
       *ngIf="book.authors.length === 1; else showAllAuthors">{{book.authors[0]}}</span>
       <ng-template #showAllAuthors>
         <!--<span *ngFor="let author of book.authors; let i = index">{{author}} <span *ngIf="book.authors.length-1 !== i">, </span></span>-->
@@ -18,7 +18,7 @@
     <mat-divider></mat-divider>
     <p class="row"><b>Released:</b> {{book.publishedDate || 'None'}}</p>
     <mat-divider></mat-divider>
-    <div class="row modal__body--desc">
+    <div *ngIf="book.description" class="row modal__body--desc">
       <p><b>Description</b></p>
       <p>{{book.description}}</p>
     </div>

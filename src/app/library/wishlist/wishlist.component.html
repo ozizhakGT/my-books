@@ -1,10 +1,10 @@
 <aside class="wishlist">
   <h2 class="wishlist__title"> <span>&#10084;</span> My Wishlist</h2>
   <div  class="wishlist__books" *ngIf="wishlist.length > 0">
-    <div *ngFor="let book of wishlist" class="wishlist__book">
-      <span class="wishlist__book--remove" (click)="onDelete(book)">&#10006;</span>
+    <div *ngFor="let book of wishlist" class="wishlist__book" matTooltip="{{book.shortTitle ? book.title : ''}}">
+      <span matTooltip="Remove from Wishlist" class="wishlist__book--remove" (click)="onDelete(book)">&#10006;</span>
       <img class="wishlist__book--image" src="{{book.imageLinks.smallThumbnail}}" alt="book pic">
-      <p>{{book.title}}</p>
+      <p>{{book.shortTitle || book.title}}</p>
     </div>
   </div>
 </aside>

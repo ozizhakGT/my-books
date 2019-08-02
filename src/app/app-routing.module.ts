@@ -12,7 +12,8 @@ const routes: Routes = [
     loadChildren: () => import('./library/library.module').then(m => m.LibraryModule),
     canActivate: [AuthGuard],
     resolve: {username: UserResolver}
-  }
+  },
+  {path: '**', redirectTo: 'login', pathMatch: 'full'}
 ];
 
 @NgModule({

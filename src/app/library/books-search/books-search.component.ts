@@ -33,6 +33,7 @@ export class BooksSearchComponent implements OnInit, OnDestroy {
 
   // Open modal Function
   openBookModal(book): void {
+    console.log(book)
     const dialogRef = this.dialog.open(BookDetailsModal, {
       width: '55rem',
       data: book
